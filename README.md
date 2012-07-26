@@ -1,4 +1,15 @@
-tab-samples
-===========
+# tab API samples
 
-Sample applications which uses tab APIs.
+## Overview
+
+tab APIを利用したサンプルアプリケーションです。
+
+## Applications
+
+### OAuth2
+
+[oauth2](https://github.com/tonchidot/tab-samples/tree/master/oauth2)
+にOAuth2認証を利用したアプリケーションがあります。
+
+* [oauth2/web](https://github.com/tonchidot/tab-samples/tree/master/oauth2/web)
+  * WEB版アプリケーション

@@ -1,0 +1,6 @@
+.rvmrc
+*.swp
+*~
+.bundle
+.DS_Store
+.idea
