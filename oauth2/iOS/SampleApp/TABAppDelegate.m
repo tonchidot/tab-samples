@@ -10,6 +10,9 @@
 #import "TABViewController.h"
 
 @implementation TABAppDelegate
+@synthesize window = _window;
+@synthesize navigationController = _navigationController;
+@synthesize viewController = _viewController;
 
 - (void)dealloc
 {

@@ -26,7 +26,7 @@ static NSString *const usersMeApi         = @"http://tab.do/api/1/users/me.json"
 @property (retain, nonatomic) IBOutlet UILabel *screenNameLabel;
 @property (retain, nonatomic) IBOutlet UILabel *emailLabel;
 @property (retain, nonatomic) IBOutlet UIButton *authTabButton;
-@property (nonatomic, retain) GTMOAuth2Authentication *auth;
+@property (retain, nonatomic) GTMOAuth2Authentication *auth;
 @end
 
 @implementation TABViewController
@@ -34,6 +34,7 @@ static NSString *const usersMeApi         = @"http://tab.do/api/1/users/me.json"
 @synthesize emailLabel = _emailLabel;
 @synthesize authTabButton = _authTabButton;
 @synthesize screenNameLabel = _screenNameLabel;
+@synthesize auth = _auth;
 
 - (void)viewDidLoad
 {
@@ -129,6 +130,7 @@ static NSString *const usersMeApi         = @"http://tab.do/api/1/users/me.json"
     [_emailLabel release];
     [_profileImageView release];
     [_authTabButton release];
+    [_auth release];
     [super dealloc];
 }
 @end
