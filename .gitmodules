@@ -1,0 +1,3 @@
+[submodule "Oauth2Sample-iOS/library"]
+	path = Oauth2Sample-iOS/library
+	url = git@github.com:tonchidot/gtm-oauth2.git
