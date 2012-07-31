@@ -12,14 +12,15 @@
 #import "GTMOAuth2SignIn.h"
 #import "JSON.h"
 
-static NSString *const kTabClientId       = @"";
-static NSString *const kTabClientSecret   = @"";
-static NSString *const kKeychainItemName  = @"OAuth Sample";
+static NSString *const kTabClientId        = @"";
+static NSString *const kTabClientSecret    = @"";
+static NSString *const kCallbackUrl        = @"";
 
-static NSString *const redirectUrl        = @"";
-static NSString *const oauth2TokenApi     = @"https://tab.do/api/1/oauth2/token";
-static NSString *const authorizeOauth2Api = @"https://tab.do/oauth2/authorize";
-static NSString *const usersMeApi         = @"http://tab.do/api/1/users/me.json";
+static NSString *const kKeychainItemName   = @"OAuth Sample";
+
+static NSString *const kOauth2TokenApi     = @"https://tab.do/api/1/oauth2/token";
+static NSString *const kAuthorizeOauth2Api = @"https://tab.do/oauth2/authorize";
+static NSString *const kUsersMeApi         = @"http://tab.do/api/1/users/me.json";
 
 @interface TABViewController ()
 @property (retain, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -63,10 +64,10 @@ static NSString *const usersMeApi         = @"http://tab.do/api/1/users/me.json"
 }
 
 - (GTMOAuth2Authentication *)authForTab {
-    NSURL *tokenURL = [NSURL URLWithString:oauth2TokenApi];    
+    NSURL *tokenURL = [NSURL URLWithString:kOauth2TokenApi];
     GTMOAuth2Authentication *auth = [GTMOAuth2Authentication authenticationWithServiceProvider:@"Custom Service Staging"
                                                                                       tokenURL:tokenURL
-                                                                                   redirectURI:redirectUrl
+                                                                                   redirectURI:kCallbackUrl
                                                                                       clientID:kTabClientId
                                                                                   clientSecret:kTabClientSecret];
     return auth;
@@ -75,7 +76,7 @@ static NSString *const usersMeApi         = @"http://tab.do/api/1/users/me.json"
 - (void)signInToTab {
     GTMOAuth2Authentication *auth = [self authForTab];
     auth.scope = @"read";
-    NSURL *authURL = [NSURL URLWithString:authorizeOauth2Api];
+    NSURL *authURL = [NSURL URLWithString:kAuthorizeOauth2Api];
     
     GTMOAuth2ViewControllerTouch *viewController;
     viewController = [[[GTMOAuth2ViewControllerTouch alloc] initWithAuthentication:auth
@@ -99,7 +100,7 @@ static NSString *const usersMeApi         = @"http://tab.do/api/1/users/me.json"
 
 - (void)getUserInfo {
     _authTabButton.hidden = YES;
-    NSURL *url = [NSURL URLWithString:usersMeApi];
+    NSURL *url = [NSURL URLWithString:kUsersMeApi];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     GTMHTTPFetcher *fetcher = [GTMHTTPFetcher fetcherWithRequest:request];
     self.auth.shouldAuthorizeAllRequests = YES;
