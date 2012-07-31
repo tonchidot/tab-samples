@@ -66,7 +66,7 @@ static NSString *const kUsersMeApi         = @"http://tab.do/api/1/users/me.json
 
 - (GTMOAuth2Authentication *)authForTab {
     NSURL *tokenURL = [NSURL URLWithString:kOauth2TokenApi];
-    GTMOAuth2Authentication *auth = [GTMOAuth2Authentication authenticationWithServiceProvider:@"Custom Service Staging"
+    GTMOAuth2Authentication *auth = [GTMOAuth2Authentication authenticationWithServiceProvider:@"Custom Service"
                                                                                       tokenURL:tokenURL
                                                                                    redirectURI:kCallbackUrl
                                                                                       clientID:kTabClientId
@@ -76,7 +76,7 @@ static NSString *const kUsersMeApi         = @"http://tab.do/api/1/users/me.json
 
 - (void)signInToTab {
     GTMOAuth2Authentication *auth = [self authForTab];
-    auth.scope = @"read";
+    auth.scope = @"all";
     NSURL *authURL = [NSURL URLWithString:kAuthorizeOauth2Api];
     
     GTMOAuth2ViewControllerTouch *viewController;
