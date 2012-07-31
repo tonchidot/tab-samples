@@ -4,10 +4,10 @@ require 'oauth2'
 require 'json'
 
 class App < Sinatra::Base
-  TAB_URL = 'http://localhost:3030/'
+  TAB_URL = 'https://tab.do/'
   REDIRECT_URI = 'http://localhost:9292/oauth2_callback'
-  CLIENT_ID = '166b5d67df47edb64235b59961953fc9'
-  CLIENT_SECRET = '3a6c7e5f092d6ef8d13fda81e080e974'
+  CLIENT_ID = 'YOUR_CLIENT_ID_HERE'
+  CLIENT_SECRET = 'YOUR_CLIENT_SECRET_HERE'
 
   def oauth2_client
     OAuth2::Client.new(CLIENT_ID, CLIENT_SECRET, site: TAB_URL, authorize_url: '/oauth2/authorize', token_url: '/api/1/oauth2/token')
