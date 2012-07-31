@@ -12,6 +12,7 @@
 #import "GTMOAuth2SignIn.h"
 #import "JSON.h"
 
+/* 環境に合わせて設定 */
 static NSString *const kTabClientId        = @"";
 static NSString *const kTabClientSecret    = @"";
 static NSString *const kCallbackUrl        = @"";
@@ -98,6 +99,7 @@ static NSString *const kUsersMeApi         = @"http://tab.do/api/1/users/me.json
     }
 }
 
+/* tabのユーザ情報を取得して表示 */
 - (void)getUserInfo {
     _authTabButton.hidden = YES;
     NSURL *url = [NSURL URLWithString:kUsersMeApi];
@@ -113,6 +115,8 @@ static NSString *const kUsersMeApi         = @"http://tab.do/api/1/users/me.json
             NSString *output = [[[NSString alloc] initWithData:data
                                                       encoding:NSUTF8StringEncoding] autorelease];
             NSDictionary *user = [[output JSONValue] objectForKey:@"user"];
+
+            /* 表示部 */
             _screenNameLabel.text = [user objectForKey:@"screen_name"];
             _emailLabel.text = [user objectForKey:@"email"];
 
