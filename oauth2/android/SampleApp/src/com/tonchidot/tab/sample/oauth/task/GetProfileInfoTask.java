@@ -43,11 +43,6 @@ public class GetProfileInfoTask extends
 		this.mProfileImageView = imageView;
 	}
 
-	public GetProfileInfoTask(Context context) {
-		super();
-		mContext = context;
-	}
-
 	@Override
 	protected void onPreExecute() {
 		super.onPreExecute();
