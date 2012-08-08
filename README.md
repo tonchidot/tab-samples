@@ -15,5 +15,5 @@ tab APIを利用したサンプルアプリケーションです。
   * WEB版アプリケーション
 * [oauth2/iOS](https://github.com/tonchidot/tab-samples/tree/master/oauth2/iOS)
   * iOS版アプリケーション
-* [oauth2/web](https://github.com/tonchidot/tab-samples/tree/master/oauth2/android)
+* [oauth2/android](https://github.com/tonchidot/tab-samples/tree/master/oauth2/android)
   * Android版アプリケーション
