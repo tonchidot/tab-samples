@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="android.support.v4.app.FragmentActivity" />
@@ -29,14 +30,17 @@
         <activity
             android:name=".GetAccessTokenActivity"
             android:exported="true"
-            android:label="@string/title_activity_get_accesstoken" >
+            android:label="@string/title_activity_get_accesstoken"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="tab" android:host="callback"/>
+                <data
+                    android:host="callback"
+                    android:scheme="tab" />
             </intent-filter>
         </activity>
     </application>

@@ -3,7 +3,6 @@ package com.tonchidot.tab.sample.oauth;
 import com.tonchidot.tab.sample.oauth.task.GetProfileInfoTask;
 import com.tonchidot.tab.sample.oauth.CommonConst;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.annotation.TargetApi;
 import android.app.Activity;
