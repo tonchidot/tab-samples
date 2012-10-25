@@ -6,6 +6,10 @@
 
 OAuth2認可コードのフローを開始し、tabサーバでのユーザ認証を経て、Access Tokenを得ることができます。
 
+## 実行環境
+
+[Ruby](http://www.ruby-lang.org/ja/) バージョン1.9.2以上の環境で動作を確認しています。
+
 ## 実行手順
 
 1. ``app.rb`` のうち、 ``CLIENT_ID``, ``CLIENT_SECRET``, ``REDIRECT_URI`` を環境に合わせて書き換える
